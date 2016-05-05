@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="{{ url_for('static', filename='css/main.css') }}"
+          rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="menu">
+    <nav class="menu">
+
+        {% block menu %}
+            <li><a class="menu__option" href="#">Lorem</a></li>
+            <li><a class="menu__option" href="#">Ipsum</a></li>
+            <li><a class="menu__option" href="#">Notes</a></li>
+            <li><a class="menu__option" href="#">Management</a></li>
+            <li><a class="menu__option" href="#">Jakub Zíka</a></li>
+
+        {% endblock %}
+    </nav>
+    <div class="user-info-parent">
+        <div class="user-info">
+            <ul class="user-info__info">
+                <li>
+                    Logged in as:
+                    <small class="user-info--highlight">nobody</small>
+                    {{ username }}
+                </li>
+                <li>
+                    Permissions:
+                    <small class="user-info--highlight">none</small>
+                    {{ username }}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="server-info">
+
+    </div>
+    <div class="notes">
+        <ul>
+            <li>
+                Notes
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="content">
+    <h1 class="heading">Opeteth</h1>
+</div>
+
+</body>
+
+
+</html>
