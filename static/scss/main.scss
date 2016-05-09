@@ -50,8 +50,8 @@ body {
 
 }
 
-.user-info {
-  background-color: $color6 - #050505;
+.info {
+
   color: $color4 - #555;
   padding-top: 30px;
   padding-left: 20px;
@@ -64,14 +64,15 @@ body {
   }
   &--highlight{
     color: $color2 + #333;
+    &-s{
+      color: $color2 ;
+    }
   }
 }
-.heading {
-  color: #422a44;
-  text-shadow: 3px -3px 0px #422a44;
-  text-align: right;
-  margin-right:60px;
-  margin-top: 60px;
-  font-size: 50px;
-  font-family: bfont;
+.user{
+  background-color: $color6 - #050505;
+}
+
+.notes{
+  background-color: $color6 - #020202;
 }

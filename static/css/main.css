@@ -76,26 +76,24 @@ body {
       padding-right: 10px;
       left: 0px; }
 
-.user-info {
-  background-color: #222222;
+.info {
   color: #aaa8a2;
   padding-top: 30px;
   padding-left: 20px;
   padding-bottom: 30px;
   line-height: 2em; }
-  .user-info-parent {
+  .info-parent {
     width: 100%;
     border-right: 20px solid #84bc9c; }
-  .user-info--highlight {
+  .info--highlight {
     color: #5fd8c0; }
+    .info--highlight-s {
+      color: #2ca58d; }
 
-.heading {
-  color: #422a44;
-  text-shadow: 3px -3px 0px #422a44;
-  text-align: right;
-  margin-right: 60px;
-  margin-top: 60px;
-  font-size: 50px;
-  font-family: bfont; }
+.user {
+  background-color: #222222; }
+
+.notes {
+  background-color: #252525; }
 
 /*# sourceMappingURL=main.css.map */

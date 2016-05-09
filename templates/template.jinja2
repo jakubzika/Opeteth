@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="{{ url_for('static', filename='css/main.css') }}"
+          rel="stylesheet" type="text/css">
+    {% block head_dependencies %}
+    {% endblock %}
+</head>
+<body>
+<div id="menu">
+    {% block menu %}
+    {% endblock %}
+</div>
+
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+</body>
+</html>
