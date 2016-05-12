@@ -1,0 +1,3 @@
+{% for a in menu %}
+    <li><a class="menu__option" onclick="ajaxRequest({{ a.index }})">{{ a.name }}</a></li>
+{% endfor %}

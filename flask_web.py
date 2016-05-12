@@ -1,5 +1,5 @@
 from flask import Flask, url_for, render_template
-
+from build import generatePage
 # Opeteth project
 
 app = Flask(__name__)
@@ -8,6 +8,7 @@ app.debug = True
 
 @app.route('/')
 def index():
+
     user = {'name': 'Jakub', 'rights': 'none'}
     notes = {'count': {
         'day': 0,
@@ -16,7 +17,8 @@ def index():
     },
         'mentions': 8
     }
-    return render_template('main.jinja2', user=user, notes=notes)
+    generatePage()
+    return render_template('template.jinja2')
 
 
 @app.route('/isup')

@@ -1,69 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link href="{{ url_for('static', filename='css/main.css') }}"
-          rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="menu">
-    <nav class="menu">
-{% block menu %}
+<nav class="menu">
+    {% block menu %}
         <li><a class="menu__option" href="#">Lorem</a></li>
         <li><a class="menu__option" href="#">Ipsum</a></li>
         <li><a class="menu__option" href="#">Notes</a></li>
         <li><a class="menu__option" href="#">Management</a></li>
         <li><a class="menu__option" href="#">Jakub Zíka</a></li>
-{% endblock %}
-    </nav>
-    <div class="info-parent">
-        <div class="user">
-            <div class="info">
-                <ul class="info__info">
-                    <li>
-                        Logged in as:
-                        <span class="info--highlight">{{ user.name }}</span>
+    {% endblock %}
+</nav>
+{% block modules %}
+<div class="info-parent">
 
-                    </li>
-                    <li>
-                        Permissions:
-                        <span class="info--highlight">{{ user.rights }}</span>
+    <div class="user">
+        <div class="info">
+            <ul class="info__info">
+                <li>
+                    Logged in as:
+                    <span class="info--highlight">{{ user.name }}</span>
 
-                    </li>
+                </li>
+                <li>
+                    Permissions:
+                    <span class="info--highlight">{{ user.rights }}</span>
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="server-info">
+                </li>
 
-    </div>
-    <div class="info-parent">
-        <div class="notes">
-            <div class="info">
-                <ul class="info__info">
-                    <li>
-                        <span class="info--highlight">{{ notes.count.day }}</span> things to do today
-                    </li>
-                    <li>
-                        <span class="info--highlight-s">{{ notes.count.week }}</span> things to do this week
-                    </li>
-                    <li>
-                        <span class="info--highlight">{{ notes.count.month }}</span> things to do this month
-                    </li>
-                    <li>
-                        <span class="info--highlight-s">{{ notes.mentions }}</span> mentions
-                    </li>
-                </ul>
-            </div>
+            </ul>
         </div>
     </div>
 </div>
+<div class="server-info">
 
-<div id="content">
 </div>
-
-</body>
-
-
-</html>
+<div class="info-parent">
+    <div class="notes">
+        <div class="info">
+            <ul class="info__info">
+                <li>
+                    <span class="info--highlight">{{ notes.count.day }}</span> things to do today
+                </li>
+                <li>
+                    <span class="info--highlight-s">{{ notes.count.week }}</span> things to do this week
+                </li>
+                <li>
+                    <span class="info--highlight">{{ notes.count.month }}</span> things to do this month
+                </li>
+                <li>
+                    <span class="info--highlight-s">{{ notes.mentions }}</span> mentions
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock modules %}
