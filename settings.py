@@ -25,12 +25,18 @@ settings = {
             'index': 3,
         }
     ],
-'modules':[
-    {
-        'name':'user info',
-        'path':'',
-        'callable':modules.user_info()
-    },
+    'modules': [
+        {
+            'name': 'user info',
+            'path': '',
+            #'callable': modules.user_info()
+        },
+        {
+            'name': 'notifications',
+            'path':'',
+            #'callable': modules.notifications()
+        },
 
-]
+    ]
+
 }
