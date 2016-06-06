@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  {% block headDependencies %}
+  {% endblock %}
+
+</head>
+<body>
+<div id="menu">
+
+  {% block sidebar %}
+  {% endblock %}
+
+</div>
+
+<div id="content">
+
+  {% block content %}
+    Loading...
+  {% endblock %}
+
+</div>
+
+{% block bodyDependencies %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,3 +1,1 @@
-/**
- * Created by Jakub on 10. 5. 2016.
- */
+$('#content').load('/pages/index');

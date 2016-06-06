@@ -1,5 +1,7 @@
 from flask import Flask, url_for, render_template
-from build import generatePage
+
+from old.build import generatePage
+
 # Opeteth project
 
 app = Flask(__name__)

@@ -1,6 +1,6 @@
-from pathlib import _Accessor
-from settings import settings, userState
-from flask import Flask, url_for, render_template
+from flask import url_for, render_template
+
+from old.settings import settings, userState
 
 
 def generatePage():
@@ -56,6 +56,4 @@ def build_menu():
     return menu
 
 def build_modules():
-    modules=[]
-    for module in settings['modules']:
-        module['callable']
+    pass
