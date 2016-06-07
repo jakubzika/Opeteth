@@ -5,7 +5,7 @@
 
 body {
 
-  background-color: $color2;
+  background-color: $background-color;
   font-family: 'Montserrat', sans-serif;
 
 }
@@ -42,7 +42,8 @@ body {
     transition: 0.5s;
     &:hover {
       padding-right: 10px;
-      left: 0px;
+      left: 0;
+      color: $color4;
 
     }
   }
@@ -57,21 +58,126 @@ body {
   padding-bottom: 30px;
   line-height: 2em;
 
-  &-parent{
+  &-parent {
     width: 100%;
     border-right: 20px solid $color3;
   }
-  &--highlight{
+  &--highlight {
     color: $color2 + #333;
-    &-s{
-      color: $color2 ;
+    &-s {
+      color: $color2;
     }
   }
 }
-.user{
+
+.user {
   background-color: $color6 - #050505;
 }
 
-.notes{
+.notes {
   background-color: $color6 - #020202;
+}
+
+.content {
+  padding:30px;
+  &__text {
+    font-family: 'Montserrat', Serif;
+    font-weight: 200;
+    font-size: $text-size;
+    color: $text-color;
+    line-height: 26px;
+  }
+
+  &__b {
+    font-weight: 600;
+  }
+
+  &__link {
+    color: $link-color;
+    transition: 0.1s;
+    &:hover {
+      color: $link-color-hover;
+    }
+  }
+
+  &__heading {
+    color: $heading-color;
+
+    &-1 {
+      @extend .content__heading;
+      font-size: $h1-size;
+    }
+    &-2 {
+      @extend .content__heading;
+      font-size: $h2-size;
+    }
+    &-3 {
+      @extend .content__heading;
+      font-size: $h3-size;
+    }
+    &-4 {
+      @extend .content__heading;
+      font-size: $h4-size;
+    }
+    &-5 {
+      @extend .content__heading;
+      font-size: $h5-size;
+    }
+  }
+
+  &__button-style {
+    @extend .content__text;
+    height: 38px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: 0.1s;
+    &:hover {
+      background-color: $color4 - #111;
+    }
+  }
+  &__button {
+    @extend .content__button-style;
+    color: $text-color;
+
+  }
+  &__select {
+    @extend .content__button-style;
+  }
+  &__textarea {
+    @extend .content__button-style;
+  }
+
+  &__table {
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    &__row {
+      width: 100%;
+      background-color: $color2 +#111;
+      &--heading {
+        background-color: $color2 - #111;
+      }
+      &:nth-child(even){
+        background-color: $color2 + #222;
+      }
+    }
+    &__cell {
+      @extend .content__text;
+      padding: 20px;
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 200;
+      &--heading {
+        font-weight:600;
+      }
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 4em;
 }

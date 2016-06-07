@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
   {% block headDependencies %}
   {% endblock %}
 
@@ -18,13 +17,13 @@
 <div id="content">
 
   {% block content %}
-    Loading...
+    {% include "pages/loading.jinja2" %}
   {% endblock %}
 
 </div>
 
+<input type="hidden" id="refresh" value="no">
 {% block bodyDependencies %}
 {% endblock %}
-
 </body>
 </html>

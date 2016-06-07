@@ -4,10 +4,19 @@ $color3: #84bc9c; //rgba(132, 188, 156, 100)
 $color4: #fffdf7; //rgba(255, 253, 247, 100)
 $color5: #f46197; //rgba(244, 97, 151, 100)
 $color6: #272727;
+$color7: #0FA0CE;
 
+$background-color: $color2;
+$heading-color: #C3F4CB;
+$text-color: #212121;
+
+$link-color: #d126b1;
+$link-color-hover: #f829d6;
+
+$ratio: 1.2;
 $h1-size: 50px;
-$h2-size:0;
-$h3-size:0;
-$h4-size:0;
-$h5-size:0;
-$text-size:0;
+$h2-size: $h1-size / $ratio;
+$h3-size: $h2-size / $ratio;
+$h4-size: $h3-size / $ratio;
+$h5-size: $h4-size / $ratio;
+$text-size: 16px;
