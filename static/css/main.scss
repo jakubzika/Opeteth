@@ -102,6 +102,7 @@ body {
 
   &__heading {
     color: $heading-color;
+    margin: 15px;
 
     &-1 {
       @extend .content__heading;

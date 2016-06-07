@@ -164,17 +164,18 @@ body {
     .content__link:hover {
       color: #f829d6; }
   .content__heading, .content__heading-1, .content__heading-2, .content__heading-3, .content__heading-4, .content__heading-5 {
-    color: #C3F4CB; }
+    color: #C3F4CB;
+    margin: 15px; }
     .content__heading-1 {
       font-size: 50px; }
     .content__heading-2 {
-      font-size: 41.66667px; }
+      font-size: 35.71429px; }
     .content__heading-3 {
-      font-size: 34.72222px; }
+      font-size: 25.5102px; }
     .content__heading-4 {
-      font-size: 28.93519px; }
+      font-size: 18.22157px; }
     .content__heading-5 {
-      font-size: 24.11265px; }
+      font-size: 13.01541px; }
   .content__button-style, .content__button, .content__select, .content__textarea {
     height: 38px;
     padding: 6px 10px;

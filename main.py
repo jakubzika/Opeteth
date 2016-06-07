@@ -1,6 +1,6 @@
 from flask import Flask, url_for, render_template,request
 from settings import settings
-from assets import get_page
+from assets import get_page,generate_menu_links
 import jinja2
 import psycopg2
 template_dir = 'templates'
@@ -14,7 +14,7 @@ conn = psycopg2.connect("dbname='opeteth' user='postgres' host='localhost' passw
 
 @app.route('/<string:page_name>')
 def page(page_name):
-    return render_template('index.jinja2', )
+    return render_template('index.jinja2', menu=generate_menu_links())
 
 @app.route('/<string:page_name>/api/<string:request>')
 def api(page_name,request):
@@ -23,7 +23,7 @@ def api(page_name,request):
 @app.route('/')
 def index():
 
-    return render_template('index.jinja2', )
+    return render_template('index.jinja2',menu=generate_menu_links() )
 
 @app.route('/pages/<string:page_name>')
 def pages(page_name):

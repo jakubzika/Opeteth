@@ -21,4 +21,16 @@ if __name__ == '__main__':
         print(row)
 
 def generate_menu_links():
-    raise NotImplemented
+    data=[]
+    temp={}
+    for i in settings['menu']:
+        temp={}
+        temp['name']=i['name']
+        temp['url']='not found'
+        for j in settings['pages']:
+            if j['id']== i['link-to']:
+                temp['url']=j['path']
+
+        data.append(temp)
+    print(data)
+    return data

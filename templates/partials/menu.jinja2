@@ -1,5 +1,7 @@
-<li><a class="menu__option" href="#">Lorem</a></li>
-<li><a class="menu__option" href="#">Ipsum</a></li>
-<li><a class="menu__option" href="#">Notes</a></li>
-<li><a class="menu__option" href="#">Manage</a></li>
-<li><a class="menu__option" href="#">User name</a></li>
+{#<li><a class="menu__option" href="#">Lorem</a></li>#}
+{#<li><a class="menu__option" href="#">Ipsum</a></li>#}
+{#<li><a class="menu__option" href="#">Notes</a></li>#}
+{#<li><a class="menu__option" href="#">Manage</a></li>#}
+{% for link in menu %}
+  <li><a class="menu__option" href="#" onclick="loadPage('{{ link.url }}')">{{ link.name }}</a></li>
+{% endfor %}

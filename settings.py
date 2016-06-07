@@ -12,7 +12,15 @@ settings = {
         {
             'uri':'notes',
             'path':'notes',
+            'id':1,
             'api':['getNotes'],
+            'call':pageProcess.notes,
+        },
+        {
+            'uri':'text',
+            'path':'text',
+            'id':2,
+            'api':[],
             'call':pageProcess.notes,
         }
 
@@ -24,8 +32,16 @@ settings = {
     },
     'menu':[
         {
+            'name':'Preview',
+            'link-to':0,
+        },
+        {
             'name':'Notes',
-            'link-to':0
+            'link-to':1,
+        },
+        {
+            'name':'Text',
+            'link-to':2,
         }
     ]
 }
