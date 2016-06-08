@@ -1,10 +1,10 @@
 # Opeteth
 ## How to run server
 Using python3
-Install dependencis
-  pip install -r freeze.txt
-Run server
-  python server.py
+- Install dependencis
+  `pip install -r freeze.txt`
+- Run server
+  `python server.py`
 
 ## How to install psycopg2 on windows machine
 Follow this tutorial
