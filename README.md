@@ -1,4 +1,6 @@
 # Opeteth
+## Github page
+https://github.com/Br0xCz/Opeteth
 ## How to run server
 Using python3
 - Install dependencies
