@@ -1,7 +1,7 @@
 # Opeteth
 ## How to run server
 Using python3
-- Install dependencis
+- Install dependencies
   `pip install -r freeze.txt`
 - Run server
   `python server.py`
