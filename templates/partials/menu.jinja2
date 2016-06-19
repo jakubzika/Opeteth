@@ -3,5 +3,7 @@
 {#<li><a class="menu__option" href="#">Notes</a></li>#}
 {#<li><a class="menu__option" href="#">Manage</a></li>#}
 {% for link in menu %}
-  <li><a class="menu__option" href="#" onclick="loadPage('{{ link.url }}')">{{ link.name }}</a></li>
+  {% if link.permission >= info.permission %}
+  <li><a class="menu__option" href="" onclick="loadPage('{{ link.url }}')">{{ link.name }}</a></li>
+  {% endif %}
 {% endfor %}

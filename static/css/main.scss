@@ -68,18 +68,16 @@ body {
       color: $color2;
     }
   }
-}
-
-.user {
-  background-color: $color6 - #050505;
-}
-
-.notes {
-  background-color: $color6 - #020202;
+  &:nth-child(odd) {
+    background-color: $color6 - #050505;
+  }
+  &:nth-child(even) {
+    background-color: $color6 - #020202;
+  }
 }
 
 .content {
-  padding:30px;
+  padding: 30px;
   &__text {
     font-family: 'Montserrat', Serif;
     font-weight: 200;
@@ -162,17 +160,17 @@ body {
       &--heading {
         background-color: $color2 - #111;
       }
-      &:nth-child(even){
+      &:nth-child(even) {
         background-color: $color2 + #222;
       }
     }
     &__cell {
       @extend .content__text;
       padding: 20px;
-      font-family: 'Montserrat',sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 200;
       &--heading {
-        font-weight:600;
+        font-weight: 600;
       }
     }
   }

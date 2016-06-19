@@ -1,0 +1,18 @@
+Errors
+3**
+
+Login error
+01 - user does not exist
+02 - wrong password
+10 - login successful
+
+Registration error
+03 - user already exists
+04 - password is too short
+05 - invalid email address
+06 - registration successful
+
+Session error
+07 - user was not logged in
+08 - session expired
+09 - session validation successful

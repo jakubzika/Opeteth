@@ -141,12 +141,10 @@ body {
     color: #5fd8c0; }
     .info--highlight-s {
       color: #2ca58d; }
-
-.user {
-  background-color: #222222; }
-
-.notes {
-  background-color: #252525; }
+  .info:nth-child(odd) {
+    background-color: #222222; }
+  .info:nth-child(even) {
+    background-color: #252525; }
 
 .content {
   padding: 30px; }
@@ -203,7 +201,7 @@ body {
         background-color: #4ec7af; }
     .content__table__cell {
       padding: 20px;
-      font-family: 'Montserrat',sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 200; }
       .content__table__cell--heading {
         font-weight: 600; }

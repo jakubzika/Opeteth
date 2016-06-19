@@ -4,5 +4,8 @@ def index():
 
 def notes():
     data={}
-    print('bar')
+    return data
 
+def admin():
+    data={}
+    return data
