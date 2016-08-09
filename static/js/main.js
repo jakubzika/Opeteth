@@ -5,7 +5,6 @@ else {
     loadPage(window.location.pathname.substr(1));
 }
 
-
 resizeSidebar = function () {
     height = $(window).height();
     $('#menu').height(height);
@@ -26,11 +25,14 @@ function loadPage(name) {
     });
     //window.location.pathname=name;
     window.history.pushState("", "", '/' + name);
+    return false;
 }
 
 loginCallback = function (response) {
     data = JSON.parse(response);
     if (data['code'] == 310) {
+        document.cookie = 'session='+data['session'];
+        console.log(document.cookie);
         location.reload();
     }
 };
@@ -45,10 +47,11 @@ function login() {
     };
     $.ajax({
         type: 'POST',
-        url: '/user/login',
+        url: '/api/user/login',
         success: loginCallback,
         data: request
     });
+    return false;
 }
 
 logoutCallback = function (response) {
@@ -62,8 +65,10 @@ function logout() {
 
     $.ajax({
         type: 'POST',
-        url: '/user/logout',
+        url: '/api/user/logout',
         success: logoutCallback,
         data: {logout: true}
-    })
+    });
+        return false;
+
 }

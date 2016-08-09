@@ -160,5 +160,5 @@ class User:
 if __name__ == '__main__':
     user = User()
     # a=user.authenticate('kuba.zika@email.cz','abc123','94.142.236.100')
-    a = user.is_logged_in('o0uTV4IEF3KgsWungJ+/vfsPLm6Btyya9SCKGDCEp4bMeuAEmtwW5nHJsM/3FLfd')
+    a = user.create_user('Testman','testmail','testpassword',10)
     print(a)

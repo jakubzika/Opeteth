@@ -22,8 +22,12 @@ def generate_menu_links():
         temp['url']='not found'
         temp['permission'] = i['permission']
         for j in settings['pages']:
-            if j['id']== i['link-to']:
+            if j['name']== i['link-to']:
                 temp['url']=j['path']
 
         data.append(temp)
     return data
+
+
+def importModules(app):
+    raise NotImplemented
