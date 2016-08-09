@@ -1,19 +1,19 @@
-from flask import Flask, url_for, render_template, request, sessions, Blueprint
-from settings import settings
-from assets import get_page, generate_menu_links
 import jinja2
 import psycopg2
-from user import add_routes, get_info
+from flask import Flask, render_template, request
 
-template_dir = 'templates'
+from assets import get_page, generate_menu_links
+from modules.User import get_info
+from settings import settings
+
+template_dir = ['templates','modules/']
 loader = jinja2.FileSystemLoader(template_dir)
-environment = jinja2.Environment(loader=loader)
-import user
+
 
 app = Flask(__name__)
 app.debug = True
 app.secret_key = 'cd217450d3b793b8b47671cf51ae2e98efb3b38f2d2b522a04b7046aad1ab165cc2834e7a4fa86d722fd5a8810b4e1d798222b109ffdb77beac5faca136d0287'
-
+app.jinja_loader = loader
 conn = psycopg2.connect("dbname='opeteth' user='postgres' host='localhost' password='N0PLZeFLEv'")
 
 
@@ -58,7 +58,12 @@ def pages(page_name):
     return get_page(page_name,info['permission'])
 
 
-user.add_routes(app)
+for moduleInfo in settings['modules']:
+    module = __import__(settings['paths']['modules'] +'.' + moduleInfo['package-path'])
+    module = getattr(module,moduleInfo['package-path'])
+    module.add_blueprint(app)
+
+#User.add_routes(app)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",port=80)
