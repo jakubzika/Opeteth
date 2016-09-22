@@ -93,6 +93,17 @@ a {
   src: url("/static/fonts/montserrat/Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"), url("/static/fonts/montserrat/Montserrat-ExtraBold.woff") format("woff"), url("/static/fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal; }
+.management__block-parent {
+  margin-top: 80px; }
+.management__align-center {
+  text-align: center; }
+.management__selection-block {
+  background-color: #96bbbc;
+  padding: 20px;
+  margin-top: 10px;
+  width: 50%;
+  border-radius: 3px; }
+
 body {
   background-color: #2ca58d;
   font-family: 'Montserrat', sans-serif; }

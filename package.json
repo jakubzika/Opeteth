@@ -1,0 +1,19 @@
+{
+  "name": "opeteth",
+  "version": "1.0.0",
+  "description": "https://github.com/Br0xCz/Opeteth\r ## How to run server\r Using python3\r - Install dependencies\r   `pip install -r freeze.txt`\r - Run server\r   `python server.py`",
+  "main": "static/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Br0xCz/Opeteth.git"
+  },
+  "author": "Jakub Zika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Br0xCz/Opeteth/issues"
+  },
+  "homepage": "https://github.com/Br0xCz/Opeteth#readme"
+}

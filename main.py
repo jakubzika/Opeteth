@@ -23,7 +23,7 @@ def auth():
     if 'session' in request.cookies:
         info = get_info(request.cookies['session'])
     else:
-        info = {'logged': False, 'permission': 20}
+        info = {'logged': False, 'permission': 20,'scope':['guest']}
     return render_template('index.jinja2', menu=generate_menu_links(), info=info)
 
 
@@ -36,6 +36,9 @@ def page(page_name):
         info = {'logged': False, 'permission': 20}
     return render_template('index.jinja2', menu=generate_menu_links(), info=info)
 
+@app.route('/<string:module_name>/<string:page_name>')
+def modulePage(module_name,page_name):
+   return page(page_name)
 
 @app.route('/<string:page_name>/api/<string:request>')
 def api(page_name, request):
@@ -53,17 +56,20 @@ def pages(page_name):
     if 'session' in request.cookies:
         info = get_info(request.cookies['session'])
     else:
-        info = {'logged': False, 'permission': 20}
+        info = {'logged': False, 'permission': 20,'scope':['guest']}
 
-    return get_page(page_name,info['permission'])
+    return get_page(page_name,info['permission'],info['scope'])
 
 
 for moduleInfo in settings['modules']:
+    # try:
     module = __import__(settings['paths']['modules'] +'.' + moduleInfo['package-path'])
     module = getattr(module,moduleInfo['package-path'])
     module.add_blueprint(app)
 
+
+
 #User.add_routes(app)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=80)
+    app.run(host="0.0.0.0",port=5000)

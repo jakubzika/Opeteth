@@ -1,11 +1,22 @@
 from settings import settings
 import modules.User
+from modules.Management.deviceManager import DeviceManager
+from lib.taskScheduler import spawnThread
+
+def foo():
+    for module in settings['modules']:
+        package = settings['paths']['modules']+'.'+module['package-path']
+        # print(package)
+        a = __import__(settings['paths']['modules']+'.'+module['package-path'])
+        b = getattr(a,module['package-path'])
+        b.add_blueprint()
+        # help(a)
+
+def test(a):
+    a=5
 
 
-for module in settings['modules']:
-    package = settings['paths']['modules']+'.'+module['package-path']
-    # print(package)
-    a = __import__(settings['paths']['modules']+'.'+module['package-path'])
-    b = getattr(a,module['package-path'])
-    b.add_blueprint()
-    # help(a)
+if __name__ == '__main__':
+    device = DeviceManager()
+    #evice.pingDevices()
+    #device.saveActivityToFile()

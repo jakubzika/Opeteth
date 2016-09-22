@@ -20,7 +20,7 @@ $(document).ready(function () {
 $(window).resize(resizeSidebar);
 
 function loadPage(name) {
-    $('#content').load('pages/' + name, function () {
+    $('#content').load('/pages/' + name, function () {
         $(this).hide().fadeIn("slow");
     });
     //window.location.pathname=name;

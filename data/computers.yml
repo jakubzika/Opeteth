@@ -1,0 +1,11 @@
+computers:
+  -
+    name: Raspberry pi
+    MAC-address: b8:27:eb:35:e5:05
+    IP-address: 192.168.1.107
+    WOL: false
+  -
+    name: PC home
+    MAC-adress: D8-CB-8A-7C-06-E3
+    IP-address: 192.168.1.100
+    WOL: true

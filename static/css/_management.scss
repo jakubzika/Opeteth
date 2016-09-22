@@ -1,0 +1,18 @@
+.management {
+
+    &__block-parent {
+      margin-top:80px;
+    }
+
+    &__align-center {
+    text-align: center;
+}
+
+  &__selection-block {
+    background-color: $management-block;
+    padding: 20px;
+    margin-top:10px;
+    width: 50%;
+    border-radius: 3px;
+  }
+}

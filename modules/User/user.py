@@ -4,6 +4,7 @@ import os
 from base64 import b64encode
 import time
 import datetime
+from lib.utils import convertStringScopeToArray
 
 error = 300
 
@@ -146,11 +147,39 @@ class User:
             return False
         return False
 
+    def get_user_info_by_session(self,session):
+        cur = self.get_cursor()
+        sql = '''
+        SELECT "user".* FROM "user" INNER JOIN  WHERE id = (SELECT user_id FROM "sessions" WHERE sessions.session = '{session}');'''.format(session=session)
+        sql2 = '''
+        SELECT "user".*, "scopes".scope, "scopes".scope_name FROM "user"
+        INNER JOIN "scopes"
+        ON "scopes".id = "user".permissions
+        WHERE "user".id = (SELECT user_id FROM "sessions" WHERE session = '{session}')
+        ;'''.format(session=session)
+        cur.execute(sql2)
+        data = cur.fetchall()
+        print(data)
+        if(data == []):
+            return None
+
+        return {
+            'id': data[0][0],
+            'name': data[0][1].rstrip(),
+            'email': data[0][2].rstrip(),
+            'password': data[0][3],
+            'permission': data[0][4],
+            'scope': convertStringScopeToArray(data[0][5]),
+            'scope-name': data[0][6],
+        }
+
     def info_by_session(self, session):
         id = self.get_session_id(session)
         sessionInfo = self.get_session_info(id)
         info = self.get_info(sessionInfo['user_id'])
         return info
+
+
 
     @staticmethod
     def hash_password(password):
@@ -160,5 +189,6 @@ class User:
 if __name__ == '__main__':
     user = User()
     # a=user.authenticate('kuba.zika@email.cz','abc123','94.142.236.100')
-    a = user.create_user('Testman','testmail','testpassword',10)
-    print(a)
+    #a = user.create_user('Testman','testmail','testpassword',10)
+    user.get_user_info_by_session('JR4snsruF+JtK4UKX89I1lk94yE17UxD0sc/xBZFwQ0QLdmMSKt5Do0rg2b1lDW/')
+    #print(a)

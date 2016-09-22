@@ -59,8 +59,9 @@ def get_info(session = None):
         return info
     loggedIn = userHandle.is_logged_in(session)
     if (loggedIn):
-        userInfo = userHandle.info_by_session(session)
+        userInfo = userHandle.get_user_info_by_session(session)
         info['permission'] = userInfo['permission']
+        info['scope'] = userInfo['scope']
         info['email'] = userInfo['email']
         info['name'] = userInfo['name']
         info['logged'] = True
