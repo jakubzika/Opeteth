@@ -24,3 +24,4 @@ Thumbs.db
 *.sbr
 .idea/
 __pycache__/
+node_modules/

@@ -2,7 +2,7 @@
   "name": "opeteth",
   "version": "1.0.0",
   "description": "https://github.com/Br0xCz/Opeteth\r ## How to run server\r Using python3\r - Install dependencies\r   `pip install -r freeze.txt`\r - Run server\r   `python server.py`",
-  "main": "static/index.js",
+  "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,27 @@
   "bugs": {
     "url": "https://github.com/Br0xCz/Opeteth/issues"
   },
-  "homepage": "https://github.com/Br0xCz/Opeteth#readme"
+  "homepage": "https://github.com/Br0xCz/Opeteth#readme",
+  "dependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.15.0",
+    "browserify": "13.0.1",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "jquery": "^3.1.1",
+    "moment": "^2.15.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  }
 }

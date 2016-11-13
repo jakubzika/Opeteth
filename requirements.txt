@@ -1,0 +1,15 @@
+click==6.6
+Cython==0.24
+-e git+https://github.com/mobolic/facebook-sdk.git@cb152bc1323ff0cdae68932497bc5f456e951d04#egg=facebook_sdk-master
+Flask==0.11.1
+itsdangerous==0.24
+Jinja2==2.8
+libsass==0.11.1
+livereload==2.4.1
+MarkupSafe==0.23
+psycopg2==2.6.1
+PyYAML==3.12
+requests==2.10.0
+six==1.10.0
+tornado==4.4.2
+Werkzeug==0.11.11

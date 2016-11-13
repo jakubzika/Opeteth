@@ -11,7 +11,7 @@
           <span class="info--highlight">{{ info.permission }}</span>
         </li>
         <li>
-          <a class="content__link" href="#" onclick="logout()">Logout</a>
+          <a class="content__link" href="#" onclick="window.logout()">Logout</a>
         </li>
       {% endif %}
       {% if not(info.logged) %}
@@ -23,7 +23,7 @@
           <input id="password-input" class="content__textarea" type="password" value="" placeholder="password"
                  name="password" required>
           <br>
-          <a class="content__link" href="#" onclick="login()">Log in</a>
+          <a class="content__link" href="#" onclick="window.login()">Log in</a>
 
         </li>
                 <li>

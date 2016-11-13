@@ -25,16 +25,22 @@ def add_blueprint(app=None):
 
     @managementApi.route('/device-activity', methods=['GET', ])
     def deviceActivity():
-        return open('temp/activity.json','r').read()
+        file = open('temp/activity.json','r')
+        data = file.read()
+        file.close()
+        return data
 
     @managementApi.route('/device/<int:id>')
     def device(id):
         raise NotImplemented
 
-    management = register_pages(management,'management')
+    @management.route('/<string:page_name>')
+    def page(page_name):
+        return register_pages('Management',page_name)
+
 
     device = DeviceManager()
-    spawnThread(10,device.saveActivityToFile)
+    spawnThread(5,device.saveActivityToFile)
 
     app.register_blueprint(management)
     app.register_blueprint(managementApi)

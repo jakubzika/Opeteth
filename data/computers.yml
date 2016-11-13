@@ -1,11 +1,33 @@
 computers:
   -
     name: Raspberry pi
-    MAC-address: b8:27:eb:35:e5:05
     IP-address: 192.168.1.107
     WOL: false
   -
     name: PC home
-    MAC-adress: D8-CB-8A-7C-06-E3
     IP-address: 192.168.1.100
     WOL: true
+  -
+    name: My phone
+    IP-address: 192.168.1.108
+    WOL: false
+  -
+    name: Sister notebook
+    IP-address: 192.168.1.110
+    WOL: false
+  -
+    name: Sister phone
+    IP-address: 192.168.1.200
+    WOL: false
+  -
+    name: Mother phone
+    IP-address: 192.168.1.101
+    WOL: false
+  -
+    name: Notebook
+    IP-address: 192.168.1.200
+    WOL: false
+  -
+    name: Netbook
+    IP-address: 192.168.1.109
+    WOL: false

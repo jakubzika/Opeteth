@@ -4,14 +4,14 @@ import os
 from base64 import b64encode
 import time
 import datetime
-from lib.utils import convertStringScopeToArray
+from lib.utils import convertStringScopeToArray, getDatabaseConnectString
 
 error = 300
 
 
 class User:
     def __init__(self):
-        self.conn = psycopg2.connect("dbname='opeteth' user='postgres' host='localhost' password='N0PLZeFLEv'")
+        self.conn = psycopg2.connect(getDatabaseConnectString())
 
     def exists(self, email):
         if (self.get_id(email)):
@@ -189,6 +189,6 @@ class User:
 if __name__ == '__main__':
     user = User()
     # a=user.authenticate('kuba.zika@email.cz','abc123','94.142.236.100')
-    #a = user.create_user('Testman','testmail','testpassword',10)
-    user.get_user_info_by_session('JR4snsruF+JtK4UKX89I1lk94yE17UxD0sc/xBZFwQ0QLdmMSKt5Do0rg2b1lDW/')
+    a = user.create_user('Alex','Alex','kočiba',1)
+    #user.get_user_info_by_session('JR4snsruF+JtK4UKX89I1lk94yE17UxD0sc/xBZFwQ0QLdmMSKt5Do0rg2b1lDW/')
     #print(a)

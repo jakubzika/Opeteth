@@ -40,5 +40,16 @@ def convertDictToJson(value):
 def getDeviceActivity():
     pass
 
+def getDatabaseInfo():
+    file = open('secret.yaml','r')
+    dataRaw = file.read()
+    data = yaml.load(dataRaw)
+    return data['database']
+
+def getDatabaseConnectString():
+    info = getDatabaseInfo()
+    string = """dbname='{dbname}' user='{user}' host='{host}' password='{password}'""".format(dbname=info['database-name'],user=info['username'],host=info['host'],password=info['password'])
+    return string
+
 if __name__ == '__main__':
     pass

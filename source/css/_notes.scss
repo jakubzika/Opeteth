@@ -1,0 +1,60 @@
+
+.notes{
+  //font-family: 'slabo';
+  font-family:Montserrat;
+  // font-family: arial;
+  line-height: 28px;
+  font-weight: 100;
+ &__note{
+   line-break:loose ;
+
+   margin:5px;
+   padding:8px;
+   background-color: #f9f9f9;
+   display: block;
+   border-top: solid 16px #84aaa4;
+  //  border-radius: 10px;
+  //  border-top-right-radius: 10px;
+  //  border-bottom-right-radius: 10px;
+   &--description{
+     font-weight: 300;
+     color: $color6;
+     text-decoration: underline;
+   }
+
+   &--text{
+     font-size:14px;
+     line-height: 18px;
+     display: block;
+     line-break:loose ;
+   }
+   &--status{
+     color: $color2;
+   }
+   &--group{
+     color: $color1;
+
+   }
+ }
+}
+
+.note{
+  &-container{
+    &:before{
+      //content: '.';
+
+    }
+    &:after{
+      //content: '.';
+    }
+  }
+  &-block{
+    //background-color: yellow;
+    //height: 30px;
+    //margin:5px;
+    //width:20%;
+     float: right;
+    //display: inline-block;
+  }
+
+}

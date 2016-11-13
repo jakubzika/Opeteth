@@ -2,6 +2,7 @@ from settings import settings
 import modules.User
 from modules.Management.deviceManager import DeviceManager
 from lib.taskScheduler import spawnThread
+from lib.utils import getDatabaseInfo
 
 def foo():
     for module in settings['modules']:
@@ -17,6 +18,7 @@ def test(a):
 
 
 if __name__ == '__main__':
-    device = DeviceManager()
+    print(getDatabaseInfo())
+    #device = DeviceManager()
     #evice.pingDevices()
     #device.saveActivityToFile()

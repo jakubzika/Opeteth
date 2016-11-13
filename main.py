@@ -1,3 +1,5 @@
+print('beginning')
+
 import jinja2
 import psycopg2
 from flask import Flask, render_template, request
@@ -5,17 +7,20 @@ from flask import Flask, render_template, request
 from assets import get_page, generate_menu_links
 from modules.User import get_info
 from settings import settings
+from lib.utils import getDatabaseConnectString
 
 template_dir = ['templates','modules/']
 loader = jinja2.FileSystemLoader(template_dir)
 
+print('still going')
 
 app = Flask(__name__)
 app.debug = True
 app.secret_key = 'cd217450d3b793b8b47671cf51ae2e98efb3b38f2d2b522a04b7046aad1ab165cc2834e7a4fa86d722fd5a8810b4e1d798222b109ffdb77beac5faca136d0287'
 app.jinja_loader = loader
-conn = psycopg2.connect("dbname='opeteth' user='postgres' host='localhost' password='N0PLZeFLEv'")
-
+print('connect psycopg')
+conn = psycopg2.connect(getDatabaseConnectString())
+print('hanged right there')
 
 @app.route('/')
 def auth():
@@ -62,12 +67,12 @@ def pages(page_name):
 
 
 for moduleInfo in settings['modules']:
-    # try:
-    module = __import__(settings['paths']['modules'] +'.' + moduleInfo['package-path'])
-    module = getattr(module,moduleInfo['package-path'])
-    module.add_blueprint(app)
-
-
+    try:
+        module = __import__(settings['paths']['modules'] +'.' + moduleInfo['package-path'])
+        module = getattr(module,moduleInfo['package-path'])
+        module.add_blueprint(app)
+    except Exception as e:
+        print('Could not initialize module',moduleInfo)
 
 #User.add_routes(app)
 

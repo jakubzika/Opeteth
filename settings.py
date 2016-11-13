@@ -85,7 +85,7 @@ settings = {
         {
             'name': 'Notes',
             'link-to': 'notes',
-            'permission': 10,
+            'permission': 20,
             'scope':['super-admin','admin','user','guest'],
 
         },

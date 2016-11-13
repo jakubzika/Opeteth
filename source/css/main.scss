@@ -3,11 +3,12 @@
 @import "variables";
 @import "menu";
 @import "management";
+@import "devices";
+@import "notes";
 
 body {
-
+  font-family: 'Montserrat';
   background-color: $background-color;
-  font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -30,6 +31,7 @@ body {
   border-right: 20px solid $color5 - #111;
   padding-bottom: 20px;
   padding-top: 10px;
+  font-family: 'Montserrat', sans-serif;
 
   &__option {
     display: block;
@@ -53,6 +55,7 @@ body {
 }
 
 .info {
+  font-family: 'Montserrat', sans-serif;
 
   color: $color4 - #555;
   padding-top: 30px;
@@ -80,12 +83,13 @@ body {
 
 .content {
   padding: 30px;
+
   &__text {
     font-family: 'Montserrat', Serif;
     font-weight: 200;
     font-size: $text-size;
     color: $text-color;
-    line-height: 26px;
+    line-height: 20px;
   }
 
   &__b {
@@ -103,7 +107,7 @@ body {
   &__heading {
     color: $heading-color;
     margin: 15px;
-
+    font-family: 'slabo';
     &-1 {
       @extend .content__heading;
       font-size: $h1-size;

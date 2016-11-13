@@ -1,0 +1,38 @@
+{
+  "groups": {
+    "0": {
+      "name": "personal"
+    },
+    "2": {
+      "name": "school"
+    },
+    "1": {
+      "name": "work"
+    }
+  },
+  "notes": {
+    "0": {
+      "group": 0,
+      "status": "pending",
+      "text": "Aliquam ante. In dapibus augue non sapien. Etiam bibendum elit eget erat. Integer vulputate sem a nibh rutrum consequat. Maecenas lorem. Aenean id metus id velit ullamcorper pulvinar. Etiam neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Vestibulum fermentum tortor id mi. Nunc auctor.",
+      "description": "Description",
+      "due": "2016:02:04 18:30"
+    },
+    "2": {
+      "group": "2",
+      "status": "aaa",
+      "text": "aaa",
+      "description": "aaa",
+      "submitted": "aaa"
+    },
+    "1": {
+      "group": "1",
+      "status": "pending",
+      "text": "something something trello something",
+      "description": "Work description",
+      "submitted": "2012"
+    }
+  },
+  "id": 3,
+  "groupsId": 3
+}
